@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: ingress-test
   annotations:
-    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/scheme: internet-facing  # public
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/subnets: <Subnet IDs>
+    alb.ingress.kubernetes.io/subnets: subnet-0fc1abdb8d65afb99, subnet-0b1abb0f7f3157194
 spec:
   ingressClassName: alb
   rules:
