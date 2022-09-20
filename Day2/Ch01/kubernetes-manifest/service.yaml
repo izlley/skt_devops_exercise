@@ -4,8 +4,8 @@ metadata:
   name: service-test
 spec:
   ports:
-    - port: 80
-      targetPort: 8080
+    - port: 80  # 외부 노출 포트
+      targetPort: 8080  # 내부 포트
       protocol: TCP
   type: ClusterIP
   selector:
