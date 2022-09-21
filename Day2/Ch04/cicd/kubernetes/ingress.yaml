@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bubble-pool
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing  # public
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/subnets: subnet-0fc1abdb8d65afb99, subnet-0b1abb0f7f3157194
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: bubble-pool
+                port:
+                  number: 80
